@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <script th:src="@{/js/indexJS.js}"></script>
+    <title>Calculator</title>
+</head>
+<body>
+<div align="center">
+
+    <form action="#" id="displayForm" th:action="@{/}" th:object="${calculator}" method="post">
+        <td th:if="${#fields.hasErrors('display')}" th:errors="*{display}" >Display Error</td>
+        <p id="demo"></p>
+        <p th:text="${session.display}" th:unless="${session == null}">[...]</p>
+
+    <tr>  <div class="display"><input type="text" readonly size="18" id="display" name="display" maxlength="7" th:value="${result}" th:unless="${session == null}"></div><br></tr>
+
+
+
+    <tr>
+
+        <td>
+
+            <button name="one" type="button" onclick='clearValue()'>C</button>
+            <button type="submit" name="operator" id="deleteButton" value="del" onclick="deleteFunction()">DEL</button>
+        </td>
+    </tr><br>
+    <tr>
+        <td>
+            <button name="one" type="button" onclick='addValue("7")'>7</button>
+        </td>
+        <td>
+            <button name="one" type="button" onclick='addValue("8")'>8</button>
+        </td>
+        <td>
+            <button name="one" type="button" onclick='addValue("9")'>9</button>
+        </td>
+        <td>
+            <button type="submit" name="operator" id="multiplyButton" value="*">*</button>
+        </td>
+    </tr><br>
+    <tr>
+        <td>
+            <button name="one" type="button" onclick='addValue("4")'>4</button>
+        </td>
+        <td>
+            <button name="one" type="button" onclick='addValue("5")'>5</button>
+        </td>
+        <td>
+            <button name="one" type="button" onclick='addValue("6")'>6</button>
+        </td>
+        <td>
+            <button type="submit" name="operator" id="minusButton" value="-">-</button>
+        </td>
+    </tr><br>
+    <tr>
+        <td><button name="one" type="button" onclick='addValue("1")'>1</button></td>
+        <td><button name="one" type="button" onclick='addValue("2")'>2</button></td>
+        <td><button name="one" type="button" onclick='addValue("3")'>3</button></td>
+        <td>
+            <button type="submit" name="operator" id="plusButton" value="+">+</button>
+        </td>
+    </tr><br>
+    <tr>
+        <td><button name="one" type="button" onclick='addValue("0")'>0</button></td>
+        <td><button name="one" type="button" onclick='addValue(".")'>.</button></td>
+        <td>
+            <button type="submit" name="operator" id="equalButton" value="=">=</button>
+        </td>
+    </tr>
+    </form>
+
+    <!--<form action="#" id="deleteForm" th:action="@{/}" method="post">-->
+    <!--<td>-->
+        <!--<button type="submit" name="operator" id="deleteButton" value="del">DEL</button>-->
+    <!--</td>-->
+    <!--</form>-->
+</div>
+</body>
+</html>
