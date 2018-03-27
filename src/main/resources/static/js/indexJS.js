@@ -9,7 +9,7 @@ function addValue(value)
 // workaround to bypass NotNull validation
 function clearValue()
 {
-    document.getElementById("display").value = "";
+    document.getElementById("display").value = " ";
 }
 
 function deleteFunction()
@@ -18,28 +18,27 @@ function deleteFunction()
     document.getElementById("display").value = v.slice(0,-1);
 }
 
-// function testMethod()
-// {
-//     document.getElementById("displayForm").submit();
-// }
+function plusMinusToggle()
+{
+    var v = document.getElementById("display").value;
 
-function validate() {
-    // //var x, text;
-    //
-    // // Get the value of the input field with id="numb"
-    // var x = document.getElementById("display").value;
-    // //document.getElementById("demo").innerHTML = "Am intrat in validate()";
-    //
-    // // If x is Not a Number or less than one or greater than 10
-    // if (x=="") {
-    //     //text = "Input not valid";
-    //     //document.getElementById("demo").innerHTML = text;
-    //     return false;
-    // } else {
-    //     //text = "Input OK";
-    //    // document.getElementById("demo").innerHTML = text;
-    //     return false;
-    // }
-    return false;
+    if(v.charAt(0)==="-"){
+        document.getElementById("display").value="+".concat(v.slice(1));
+    }
+    else if((v.charAt(0)==="+")){
+        document.getElementById("display").value="-".concat(v.slice(1));
+    }
+    else if(v.length>0){
+        document.getElementById("display").value="+".concat(v);
+    }
+}
 
+// ensure that only one '.' is added in the display
+function dotFunction()
+{
+    var v = document.getElementById("display").value;
+
+    if(v.indexOf(".") === -1){
+        addValue(".");
+    }
 }

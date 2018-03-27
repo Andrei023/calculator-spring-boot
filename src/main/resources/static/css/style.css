@@ -1,0 +1,38 @@
+.button {
+    background-color: #008CBA;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 17px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 23px 20px;
+    width: 85px;
+    font-family: "Times New Roman", Times, serif;
+}
+
+#deleteButton{
+    background-color:orange;
+}
+
+body{
+    background-color: #e7e7e7;
+}
+
+#plusButton, #minusButton, #multiplyButton, #divideButton, #equalButton{
+    background-color: #ff9933;
+}
+
+#clearButton, #deleteButton, #plusMinus{
+    background-color: #b3b3b3;
+    color: black;
+
+}
+
+#zero{
+    width: 165px;
+    margin-right: auto;
+}
