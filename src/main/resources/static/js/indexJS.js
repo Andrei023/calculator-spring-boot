@@ -6,20 +6,16 @@ function addValue(value)
     }
 }
 
+// workaround to bypass NotNull validation
 function clearValue()
 {
     document.getElementById("display").value = "";
 }
 
-function deleteValue()
+function deleteFunction()
 {
     var v = document.getElementById("display").value;
     document.getElementById("display").value = v.slice(0,-1);
-}
-
-function deleteFunction()
-{
-    document.getElementById("display").value = "yoo";
 }
 
 // function testMethod()

@@ -33,7 +33,7 @@ public class IndexController {
         //System.out.println("Operator is: "+operator);
 
 
-        if (request.getParameter("operator").equals("del")) {
+        if (request.getParameter("operator").equals("clear")) {
             //session.setAttribute("display", "");
             //session.setAttribute("operator", "");
             session.invalidate();
