@@ -2,12 +2,13 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <script th:src="@{/js/indexJS.js}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script th:src="@{/js/index.js}"></script>
     <link th:href="@{/style.css}" rel="stylesheet" />
     <title>Calculator</title>
 
     <style>
-        .button {
+        .button,.operand {
             background-color: #008CBA;
             border: none;
             color: white;
@@ -20,7 +21,7 @@
             cursor: pointer;
             border-radius: 23px 20px;
             width: 85px;
-            font-family: "Times New Roman", Times, serif;
+            font-family: Arial, Helvetica, sans-serif;
         }
 
         #deleteButton{
@@ -64,13 +65,13 @@
         <table>
             <tr>
                 <th>
-                    <button class="button" type="submit" colspan="2" name="operator" id="clearButton" value="clear" onclick='clearValue()'>C</button>
+                    <button class="button" type="submit" colspan="2" name="operator" id="clearButton" value="clear">C</button>
                 </th>
                 <th>
-                    <button class="button" name="one"  colspan="2" type="button" id=deleteButton onclick='deleteFunction()'>DEL</button>
+                    <button class="button" name="one"  colspan="2" type="button" id=deleteButton>DEL</button>
                 </th>
                 <th>
-                    <button class="button" name="plusMinus" type="button" id="plusMinus" onclick='plusMinusToggle()'>±</button>
+                    <button class="button" name="plusMinus" type="button" id="plusMinus">±</button>
                 </th>
                 <th>
                     <button class="button" type="submit" name="operator" id="divideButton" value="/">÷</button>
@@ -78,13 +79,13 @@
             </tr>
             <tr>
                 <td>
-                    <button class="button" type="button" onclick='addValue("7")'>7</button>
+                    <button class="operand" type="button">7</button>
                 </td>
                 <td>
-                    <button class="button" type="button" onclick='addValue("8")'>8</button>
+                    <button class="operand" type="button">8</button>
                 </td>
                 <td>
-                    <button class="button" type="button" onclick='addValue("9")'>9</button>
+                    <button class="operand" type="button">9</button>
                 </td>
                 <td>
                     <button class="button" name="operator" id="multiplyButton" value="*">×</button>
@@ -92,13 +93,13 @@
             </tr>
             <tr>
                 <td>
-                    <button class="button" type="button" onclick='addValue("4")'>4</button>
+                    <button class="operand" type="button">4</button>
                 </td>
                 <td>
-                    <button class="button" type="button" onclick='addValue("5")'>5</button>
+                    <button class="operand" type="button">5</button>
                 </td>
                 <td>
-                    <button class="button" type="button" onclick='addValue("6")'>6</button>
+                    <button class="operand" type="button">6</button>
                 </td>
                 <td>
                     <button class="button" type="submit" name="operator" id="minusButton" value="-">-</button>
@@ -106,13 +107,13 @@
             </tr>
             <tr>
                 <td>
-                    <button class="button" type="button" onclick='addValue("1")'>1</button>
+                    <button class="operand" type="button">1</button>
                 </td>
                 <td>
-                    <button class="button" type="button" onclick='addValue("2")'>2</button>
+                    <button class="operand" type="button">2</button>
                 </td>
                 <td>
-                    <button class="button" type="button" onclick='addValue("3")'>3</button>
+                    <button class="operand" type="button">3</button>
                 </td>
                 <td>
                     <button class="button" type="submit" name="operator" id="plusButton" value="+">+</button>
@@ -120,10 +121,10 @@
             </tr>
             <tr>
                 <td colspan="2">
-                    <button class="button" name="zero" id="zero" type="button" onclick='addValue("0")'>0</button>
+                    <button class="button" name="zero" id="zero" type="button">0</button>
                 </td>
                 <td>
-                    <button class="button" type="button" onclick='dotFunction()'>.</button>
+                    <button class="button" type="button" id="dotButton">.</button>
                 </td>
 
                 <td>

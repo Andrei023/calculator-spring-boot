@@ -35,7 +35,6 @@ public class IndexController {
 
         if (request.getParameter("operator").equals("clear")) {
             session.invalidate();
-            System.out.println("you pressed del");
             return "index";
         } else {
             if (session.isNew()) {
